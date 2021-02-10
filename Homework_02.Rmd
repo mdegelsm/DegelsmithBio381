@@ -1,0 +1,8 @@
+---
+title: "Homework_02"
+author: "Maddy Degelsmith"
+date: "2/10/2021"
+output: html_document
+---
+
+Hello my name is **Maddy** and a fun fact about me is that I am studying *Spanish* 
