@@ -10,4 +10,12 @@ output:
 
 ## This is my repo!
 
-My name is **Maddy** 
+My name is **Maddy** and a fun fact about me is that I am studying Spanish
+
+<img src="MaddyPhoto.jpg" width = "200" height ="200" />
+
+## Homework Assignments 
+
+### Week 1: **Nothing due**
+
+### Week 2: [Link text:Homework 2](Homework_02.html)

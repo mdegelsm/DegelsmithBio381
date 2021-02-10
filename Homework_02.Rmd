@@ -1,8 +1,10 @@
 ---
-title: "Homework_02"
+title: "Homework 2"
 author: "Maddy Degelsmith"
 date: "2/10/2021"
 output: html_document
 ---
 
-Hello my name is **Maddy** and a fun fact about me is that I am studying *Spanish* 
+Hello my name is **Maddy** and a fun fact about me is that I am studying *Spanish*
+
+This is the Homework 2 file that is supposed to be linked from my main page. woohoo!
