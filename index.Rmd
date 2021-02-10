@@ -18,4 +18,4 @@ My name is **Maddy** and a fun fact about me is that I am studying Spanish
 
 ### Week 1: **Nothing due**
 
-### Week 2: [Link text:Homework 2](Homework_02.html)
+### Week 2: [Homework 2 Link](Homework_02.html)
