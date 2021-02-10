@@ -2,7 +2,10 @@
 title: "My Homepage"
 author: "Maddy Degelsmith"
 date: "2/10/2021"
-output: html_document
+output:
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
 ---
 
 ## This is my repo!
