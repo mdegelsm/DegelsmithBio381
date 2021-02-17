@@ -20,4 +20,5 @@ My name is **Maddy** and a fun fact about me is that I am studying Spanish
 
 ### Week 2: [Homework 2 Link](Homework_02.html)
 
-## Week 3: [Homework 3 Link](Homework_03.html)
+### Week 3: [Homework 3 Link](Homework_03.html)
+
