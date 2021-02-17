@@ -1,0 +1,69 @@
+---
+title: "Homework_03"
+author: "Maddy Degelsmith"
+date: "2/17/2021"
+output: html_document
+---
+
+# Using a singular regular expression to change expressions 
+
+```
+1. 
+	Find: \h+
+	Replace: ,
+```
+
+This found all spaces and got rid of them
+
+```
+2. 
+	Find: (\w+), (\w+), (\w*.*)
+	Replace: \2 \1 \(\3\)
+```
+
+This selected the sections of the text, reversed the first and last name, and put parenthesis around the university
+	
+```
+ 3. 
+  Find: \w(00)
+  Replace: \r000
+  ```
+  	
+This created a list from 0 to 4
+	
+
+```
+ 4. 
+   Find: (\d{4})\s(\w*.*)(.mp3)
+   Replace: \1\3
+
+	
+```
+
+This took the 0001 - 0004 and put it before the .mp3
+
+```
+ 5. 
+  Find: (\w)\w+,(\w+),\d*.\d*,(\d*\s)
+  Replace: \1_\2,\3
+  ```
+  
+This selected the names and replaced them with the first letter of the genus, and underscore, the species, and two numeric variables
+
+
+```
+ 6. 
+  Find: (\w)\w+,(\w{4})\w+,\d*.\d*,(\d*\s)
+  Replace: \1_\2,\3
+  
+  ```
+	
+This did the same thing as 5 but only with the first for letters of the species
+	
+```
+7.
+	Find: (\w{3})\w+,(\w{3})\w+,(\d*.\d*),(\d*)
+	Replace:\1\2, \4, \3
+```
+
+This took the first three letters of the genus and the first three letters of the species and put them together, and then reversed the numbers
