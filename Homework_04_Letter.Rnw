@@ -15,7 +15,7 @@
 %--------------------------------------
 \begin{document}
 \raggedright % toggle off for flush right margin
-\includegraphics[scale=2]{UVMLogo.jpg}\\ % delete to remove UVM letterhead
+\includegraphics[scale=.4]{UVMLogo.jpg}\\ % delete to remove UVM letterhead
 
 %--------------------------------------
  \hfill\hfill\hfill % to align following text flush right
@@ -58,13 +58,12 @@ Dear X:
 Sincerely yours,\\
 \includegraphics[scale=0.15,width=2in]{Signature.jpg}\\
 Maddy Degelsmith\\
-Undergrad, Biological Sciences B.S & Spanish B.A Candidate\\
+Biological Sciences B.S Candidate\\
+Spanish B.A Candidate\\
 University of Vermont\\
 Burlington, VT 05405 USA\\
 845-490-0534\\
 mdegelsm@uvm.edu\\
-http://tinyurl.com/gotelli
-ORCid:https://orcid.org/0000-0002-5409-7456\\
 \end{tabular}
 %--------------------------------------
 

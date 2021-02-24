@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.24)  24 FEB 2021 14:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2021.2.24)  24 FEB 2021 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -192,50 +192,35 @@ e
 File: UVMLogo.jpg Graphic file (type jpg)
 <use UVMLogo.jpg>
 Package pdftex.def Info: UVMLogo.jpg  used on input line 69.
-(pdftex.def)             Requested size: 2007.49512pt x 529.9787pt.
-
-Overfull \hbox (1537.7401pt too wide) in paragraph at lines 69--69
-[][]  
- []
-
+(pdftex.def)             Requested size: 401.49289pt x 105.99411pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 76.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 76.
-[1
-
-{c:/Users/maddy/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
-x.map} <./UVMLogo.jpg>]
-<Signature.jpg, id=8, 181.17688pt x 56.21pt>
+<Signature.jpg, id=2, 181.17688pt x 56.21pt>
 File: Signature.jpg Graphic file (type jpg)
 <use Signature.jpg>
 Package pdftex.def Info: Signature.jpg  used on input line 110.
 (pdftex.def)             Requested size: 27.17535pt x 8.43112pt.
+[1
 
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.112 Undergrad, Biological Sciences B.S &
-                                           Spanish B.A Candidate\\
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-[2 <./Signature.jpg>] (./Homework_04_Letter.aux) ) 
+{c:/Users/maddy/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
+x.map} <./UVMLogo.jpg> <./Signature.jpg>] (./Homework_04_Letter.aux) ) 
 Here is how much of TeX's memory you used:
  1803 strings out of 481252
  31383 string characters out of 5914123
- 569986 words of memory out of 5000000
+ 571988 words of memory out of 5000000
  18747 multiletter control sequences out of 15000+600000
  403430 words of font info for 27 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  68i,11n,75p,267b,214s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/Users/maddy/AppData/Roami
-ng/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on Homework_04_Letter.pdf (2 pages, 702094 bytes).
+<c:/Users
+/maddy/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
+pfb>
+Output written on Homework_04_Letter.pdf (1 page, 701163 bytes).
 PDF statistics:
- 17 PDF objects out of 1000 (max. 8388607)
- 9 compressed objects within 1 object stream
+ 14 PDF objects out of 1000 (max. 8388607)
+ 7 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

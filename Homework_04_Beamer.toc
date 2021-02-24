@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Maddy Degelsmith}{5}{0}{1}
+\beamer@subsectionintoc {1}{1}{Computational Biology 381}{5}{0}{1}
