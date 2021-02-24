@@ -8,6 +8,6 @@ output: html_document
 
 [Typora](Homework_04_Typora.html)
 
-[Letter](Homework_04_Letter.Rnw)
+[Letter](Homework_04_Letter.pdf)
 
-[PDF Slide Show](Homework_04_Beamer.Rnw)
+[PDF Slide Show](Homework_04_Beamer.pdf)
