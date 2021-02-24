@@ -10,7 +10,7 @@ output:
 
 ## This is my repo!
 
-My name is **Maddy** and a fun fact about me is that I am studying Spanish
+My name is **Maddy** and this is my webpage! 
 
 <img src="MaddyPhoto.jpg" width = "200" height ="200" />
 
@@ -21,4 +21,6 @@ My name is **Maddy** and a fun fact about me is that I am studying Spanish
 ### Week 2: [Homework 2 Link](Homework_02.html)
 
 ### Week 3: [Homework 3 Link](Homework_03.html)
+
+### Week 4: [Homweork 4 Link](Homework_04.html)
 
