@@ -28,4 +28,4 @@ My name is **Maddy** and this is my webpage!
 
 ### Week 6: [Homework 6 Link](Homework_06.html)
 
-### Week 7: [Homework 8 Link](Homework_07.html)
+### Week 7: [Homework 7 Link](Homework_07.html)
