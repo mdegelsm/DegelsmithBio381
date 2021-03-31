@@ -1,0 +1,133 @@
+---
+title: "Homework 08"
+author: "Maddy Degelsmith"
+date: "3/31/2021"
+output: html_document
+---
+
+# Ranavirus Hypothesis
+Tadpoles with heterozygosity will have lower viral loads than those with homozygosity
+
+
+### Original Sample size: **80** (40 homozygous & 40 heterozygous tadpoles)
+### Standard Deviation: **500**
+
+  * I used 500 because viral load can vary A LOT 
+  
+### homozygous mean: **10000**
+
+ * I used this number since homozygous tadpoles would be more likely to die and would have a larger viral load
+  
+### heterozygous mean: **3000**
+
+  * I used this number because a lower viral load means the tadpole would be less likely to die
+
+
+```{r}
+# ---------------------------
+# homework 8 script
+# 31 Mar 21
+# MJD
+# ---------------------------
+# homozygous tadpoles - higher viral load
+# heterozygous tadpoles - lower viral load
+library(tidyr)
+library(ggplot2)
+
+sampleSize <- 1:40
+
+# random normal data for homzygous
+homozygous <- rnorm(n=sampleSize, mean = 10000, sd =500)
+homozygous 
+
+# random normal data for heterozygous
+heterozygous <- rnorm(n=sampleSize, mean = 3000, sd = 500)
+
+
+df <- data.frame(homozygous, heterozygous)
+df
+
+# making a data frame
+df2 <- gather(df,group,virus)
+df2
+
+# statistical analysis
+anova <- aov(virus~group, data=df2)
+summary(anova)
+
+p1 <- ggplot(data=df2, mapping=aes(x=group, y=virus, fill=group)) +
+               geom_boxplot() 
+             p1
+
+
+```
+
+### in order for my p-value to be insignificant, I had to change the difference in viral load mean to less than 100 between homozygous (4000) & heteroxygous (3900)
+
+```{r}
+
+library(tidyr)
+library(ggplot2)
+
+sampleSize <- 1:40
+
+# random normal data for homzygous
+homozygous <- rnorm(n=sampleSize, mean = 4000, sd =500)
+homozygous 
+
+# random normal data for heterozygous
+heterozygous <- rnorm(n=sampleSize, mean = 3900, sd = 500)
+
+
+df <- data.frame(homozygous, heterozygous)
+df
+
+# making a data frame
+df2 <- gather(df,group,virus)
+df2
+
+# statistical analysis
+anova <- aov(virus~group, data=df2)
+summary(anova)
+
+
+p1 <- ggplot(data=df2, mapping=aes(x=group, y=virus, fill=group)) +
+               geom_boxplot() 
+             p1
+
+```
+
+### With the original means, any sample size led to significant results since the means were so different
+```{r}
+library(tidyr)
+library(ggplot2)
+
+sampleSize <- 1:2
+
+# random normal data for homzygous
+homozygous <- rnorm(n=sampleSize, mean = 10000, sd =500)
+homozygous 
+
+# random normal data for heterozygous
+heterozygous <- rnorm(n=sampleSize, mean = 3000, sd = 500)
+
+
+df <- data.frame(homozygous, heterozygous)
+df
+
+# making a data frame
+df2 <- gather(df,group,virus)
+df2
+
+# statistical analysis
+anova <- aov(virus~group, data=df2)
+summary(anova)
+
+
+p1 <- ggplot(data=df2, mapping=aes(x=group, y=virus, fill=group)) +
+               geom_boxplot() 
+             p1
+
+```
+
+
