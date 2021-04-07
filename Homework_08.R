@@ -19,11 +19,11 @@ heterozygous <- rnorm(n=sampleSize, mean = 3000, sd = 500)
 
 
 df <- data.frame(homozygous, heterozygous)
-df
+
 
 # making a data frame
 df2 <- gather(df,group,virus)
-df2
+
 
 # statistical analysis
 anova <- aov(virus~group, data=df2)
