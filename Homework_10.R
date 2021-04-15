@@ -1,0 +1,202 @@
+# ---------------------------
+# Homework 10
+# 14 Apr 21
+# MJD
+# ---------------------------
+
+
+# Question 1:  for loop counting number of 0s in vector
+counter <- 0
+vector <- c(1,0,104,207,0,13,19,0,170,0)
+
+for (i in seq_along(vector)) {
+ if(vector[i] == 0){     
+  counter <- counter + 1
+ }
+ # return(counter)
+}
+print(counter)
+
+# Question 2: subsetting 
+vector <- c(1,0,104,0,207,0,13,19,0,170,0,80,0)
+
+newVector <- subset(vector, vector==0)
+length(newVector)
+
+# Question 3: function to make matrix
+
+#-----------------------------------------
+# FUNCTION myMatrix
+# description: Takes two intergers (rows, columns) and makes matrix
+# inputs: rows =
+#         columns = 
+# outputs: matrix where each element is product of row number x column number
+##############################
+
+myMatrix <- function(rows=6,columns=5){
+  
+  m <- matrix(data=1, nrow=rows,ncol=columns)
+  for (i in 1:nrow(m)){ # start of outer (row)loop
+    for(j in 1:ncol(m)) { # start of inner (column) loop
+      m[i,j] <- m[i,j] * i * j
+    } # end of inner (column) loop
+  } # end of outer (row) loop
+ 
+ 
+  
+  return(m)
+  
+} # end of myMatrix
+myMatrix()
+
+
+#  Question 4
+
+# preliminaries ------------------------------
+
+set.seed(12435)
+ 
+#-----------------------------------------
+# FUNCTION read_data
+# description: read in (or generate) data set for analysis
+# inputs: file name (or nothing, as in this demo
+# outputs: 3 column data frame of observed data (ID, x, y)
+##############################
+
+read_data <- function(x="Homework7.csv"){
+    
+    if(is.null(x)) { 
+      x_obs <- 1:20
+      y_obs <- x_obs + 10*rnorm(20)
+      df1 <- data.frame(ID=seq_along(x_obs),x_obs,y_obs)
+      
+    }# end of if statement
+    
+    z <- read.table(x,header=TRUE,sep=",", stringsAsFactors=FALSE)
+    temps <- z$temperature 
+    ID <- seq_along(temps)
+    volumes <- z$cell_volume
+    
+  
+  df1 <- data.frame(ID,temps,volumes)
+  
+  
+  return(df1)
+  
+} # end of read_data
+#-----------------------------------------
+#df <- read_data()
+
+#-----------------------------------------
+# FUNCTION get_metric
+# description: calculate metric for randomization test
+# inputs: 2-column data frame for regression
+# outputs: regression slope
+##############################
+
+
+get_metric <- function(z=df){
+  # if(is.null(z)){
+  #   x_obs <- 1:20
+  #   y_obs <- x_obs + 10*rnorm(20)
+  #   z <- data.frame(ID=seq_along(x_obs), x_obs, y_obs)}
+  
+  
+  . <- lm(z[,3]~z[,2])
+  . <- summary(.)
+  . <- .$coefficients[2,1]
+  slope <- .
+  
+  return(slope)
+  
+  
+} # end of get_metric
+#-----------------------------------------
+#slope <- get_metric()
+
+#-----------------------------------------
+# FUNCTION shuffle_data
+# description: randomize data for regression analysis
+# inputs: 3 column data frame(ID, x,y)
+# outputs: 3 column data frame(ID, xvar, yvar) ##############################
+
+shuffle_data <- function(z=df){
+  
+  # if(is.null(z)){
+  #   x_obs <- 1:20
+  #   y_obs <- x_obs + 10*rnorm(20)
+  #   z <- data.frame(ID=seq_along(x_obs), x_obs, y_obs)}
+  
+  z[,3]<- sample(z[,3])
+  
+  return(z)
+  
+} # end of shuffle_data
+#-----------------------------------------
+shuff <- shuffle_data()
+
+
+#-----------------------------------------
+# FUNCTION get_pval
+# description: calculate p value from simulation
+# inputs: list of observed metric and vector of simulated metrics
+# outputs: lower, and upper tail probaility value
+##############################
+
+get_pval <- function(z=shuff){
+  
+  # if(is.null(z)){
+  #   z <- list(rnorm(1), rnorm(1000))}
+  
+  p_lower <- mean(z[[2]] <= z[[1]])
+  p_upper <- mean(z[[2]] >= z[[1]])
+  
+  return(c(pL=p_lower, pU=p_upper))
+  
+} # end of get_pval
+#-----------------------------------------
+#get_pval()
+
+#-----------------------------------------
+# FUNCTION plot_ran_test
+# description: greate a ggplot of histogram of simulated values
+# inputs: list of observed metric and vector simulated metrics
+# outputs: saved ggplot graph
+##############################
+library(ggplot2)
+plot_ran_test <- function(z=NULL){
+  
+  if(is.null(z)){
+    z <- list(rnorm(1), rnorm(1000))}
+  
+  df <-data.frame(ID=seq_along(z[[2]]), sim_x=z[[2]])
+  p1 <- ggplot(data=df, mapping=aes(x=sim_x))
+  
+  
+  return( p1+
+            geom_histogram(mapping=aes(fill=I("chartreuse"), color=I("red")))+ 
+            geom_vline(aes(xintercept=z[[1]],col="blue")))
+  
+} # end of plot_ran_test
+#-----------------------------------------
+# plot_ran_test()
+
+n_sim <- 1000 # number of simulated data sets
+x_sim <- rep(NA,n_sim) # set up empty vector for simulated slopes
+df <- read_data() #get (fake) data
+x_obs <- get_metric(df) # get slope of observed data
+
+for (i in seq_len(n_sim)){
+  x_sim[i] <- get_metric(shuffle_data(df))
+} # run simulation
+
+slopes <- list(x_obs,x_sim)
+get_pval(slopes)
+plot_ran_test(slopes)
+
+
+# question 5
+regModel <- lm(volumes~temps,data=df)
+summary(regModel)
+
+

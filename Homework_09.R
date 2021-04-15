@@ -43,7 +43,7 @@ df1 <- fakeData()
 
 ANOVA <- function(data=df1){
   
-  anova <- aov(virus~group, data)
+  anova <- n(virus~group, data)
   
   return(cat("P = ", summary(anova)[[1]][["Pr(>F)"]][1]))
   
@@ -61,7 +61,14 @@ new_anova <- ANOVA()
 
 boxPlot <- function(data=df1){
   
-  p1 <- ggplot(data, mapping=aes(x=group,y=virus, fill=group)) + geom_boxplot()
+  p1 <- ggplot(data, mapping=aes(x=group,y=virus, fill=group)) + 
+    geom_boxplot() + 
+    scale_fill_manual(values=c("olivedrab3", "#E69F00"),labels=c("Heterozygotes", "Homozygotes"))+
+    labs(title="Expected Results", x ="", y = "Viral Load",fill="") +
+    scale_x_discrete(labels=c("Heterozygotes", "Homozygotes"))
+    
+              
+                        
   
   return(p1)
   
@@ -69,6 +76,9 @@ boxPlot <- function(data=df1){
 #-----------------------------------------
 boxPlot()
 
+
+  
+  
 
 # Modified Data ------------------------------
 
@@ -111,7 +121,7 @@ myScat <- function(data=df3){
   p1 <- ggplot(data, aes(x=TimeToDeath,y=FST,  color=group)) + 
     geom_point(size=3,shape=20) + 
     geom_smooth(method=lm, color="cyan4") + 
-    labs(title="Expected Results", x ="Time To Death", y = "FST (Heterozygosity)",color="") +
+    labs(title="Expected Results", x ="Time To Death", y = "Genetic Differentiation",color="") +
    scale_color_manual(values=c("olivedrab3", "#E69F00"),labels=c("Heterozygote", "Homozygote"))
 
   
