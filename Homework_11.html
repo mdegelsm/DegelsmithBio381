@@ -280,8 +280,9 @@ regStats &lt;- function(d=NULL) {
 fileFolder &lt;- &quot;RandomFiles/&quot;
 nFiles &lt;- 100
 fileOut &lt;- &quot;StatsSummary.csv&quot;
-dir.create(fileFolder)
-#--------------------------------------------
+dir.create(fileFolder)</code></pre>
+<pre><code>## Warning in dir.create(fileFolder): &#39;RandomFiles&#39; already exists</code></pre>
+<pre class="r"><code>#--------------------------------------------
 
 # Create 100 random data sets
 FileBuilder(fileN=nFiles)</code></pre>
