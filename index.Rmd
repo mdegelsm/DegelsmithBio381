@@ -38,4 +38,4 @@ My name is **Maddy** and this is my webpage!
 
 ### Week 11: [Homework 11 Link](Homework_11.html)
 
-### Week 12: [Homework 12 Link](Homework.12.html)
+### Week 12: [Homework 12 Link](Homework_12.html)
